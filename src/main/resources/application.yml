@@ -1,0 +1,30 @@
+spring:
+  datasource:
+#    schema: classpath:db/schema.sql
+#    data: classpath:db/data.sql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mybatis_plus?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+
+mybatis-plus:
+#  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-enums-package: com.bfh.mybatisplus.enumeration
+  type-aliases-package: com.bfh.mybatisplus.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  global-config:
+    db-config:
+      table-prefix: tbl_
+      table-underline: true
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+logging:
+  file:
+    name: log.txt
+  level:
+    com.bfh: debug

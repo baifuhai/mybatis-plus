@@ -13,8 +13,11 @@ mybatis-plus:
   type-enums-package: com.bfh.mybatisplus.enumeration
   type-aliases-package: com.bfh.mybatisplus.entity
   configuration:
+    cache-enabled: false
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    jdbc-type-for-null: null
+    local-cache-scope: statement
   global-config:
     db-config:
       table-prefix: tbl_
